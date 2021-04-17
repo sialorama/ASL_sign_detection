@@ -25,6 +25,6 @@ def segment_hand(frame, threshold=20):
     return (thresholded)
 ```
 ### Résultat :
-   ![image_seuillage](img/seuillage.png)
+![image](img/seuillage.png)
    
 ## Modéle
