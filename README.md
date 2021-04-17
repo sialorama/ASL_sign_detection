@@ -24,7 +24,40 @@ def segment_hand(frame, threshold=20):
     
     return (thresholded)
 ```
-### Résultat :
-![image](img/seuillage.png)
+#### Résultat :
+![image_seuillage](img/seuillage.png)
    
-## Modéle
+## Modèle
+Le model de réseau de neurones CNN est le suivant:
+```python
+model = tf.keras.Sequential()
+
+model.add(tf.keras.layers.Conv2D(filters=32, kernel_size=(3,3), activation='relu', input_shape=(IMG_SIZE, IMG_SIZE, 3)))
+model.add(tf.keras.layers.Conv2D(filters=64, kernel_size=(3,3), activation='relu'))
+model.add(Dropout(0.8))
+
+model.add(tf.keras.layers.Conv2D(filters=128, kernel_size=(3,3), activation='relu'))
+model.add(Dropout(0.8))
+
+model.add(tf.keras.layers.Flatten())
+model.add(Dropout(0.8))
+
+model.add(tf.keras.layers.Dense(32, activation='relu'))
+model.add(tf.keras.layers.Dense(64, activation='relu'))
+model.add(tf.keras.layers.Dense(128, activation='relu'))
+model.add(tf.keras.layers.Dense(27, activation='softmax'))
+
+model.compile(optimizer ='adam',
+             loss = 'categorical_crossentropy',
+             metrics = ['accuracy'])
+```
+
+## Evaluation du modèle
+La val_accuracy atteint 96%. Résultat satisfaisant au vu de la courbe Loss et Val_loss.
+![loss](img/loss.png)
+
+## Matrice de confusion
+La matrice de confusion montre que la majorité des lettre on été bien classées.
+![cm](img/cm.png)
+## Execution de la capture video en temps réel
+![image](img/j1.png)
