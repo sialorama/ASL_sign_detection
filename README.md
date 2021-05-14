@@ -53,8 +53,10 @@ model.compile(optimizer ='adam',
 ```
 
 ## Evaluation du modèle
-La val_accuracy atteint 96%. Résultat satisfaisant au vu de la courbe Loss et Val_loss.
-![loss](img/loss.png)
+
+La val_accuracy atteint 96%. Résultat satisfaisant au vu de la courbe Loss et Val_loss.  
+![accuracy](img/accuracy.png)  
+![loss](img/loss.png)  
 
 ## Matrice de confusion
 La matrice de confusion montre que la majorité des lettre on été bien classées.
