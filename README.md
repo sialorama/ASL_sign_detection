@@ -61,5 +61,4 @@ La val_accuracy atteint 96%. Résultat satisfaisant au vu de la courbe Loss et V
 ## Matrice de confusion
 La matrice de confusion montre que la majorité des lettre on été bien classées.
 ![cm](img/cm.png)
-## Execution de la capture video en temps réel
-![image](img/j1.png)
+
